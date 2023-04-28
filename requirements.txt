@@ -1,0 +1,5 @@
+fastapi
+telegram
+sqlalchemy
+schedule
+requests
