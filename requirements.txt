@@ -1,5 +1,8 @@
-fastapi
-telegram
-sqlalchemy
+fastapi~=0.95.1
+sqlalchemy~=2.0.11
 schedule
 requests
+python-dotenv~=1.0.0
+aiogram~=2.25.1
+uvicorn
+sqlalchemy-migrate
