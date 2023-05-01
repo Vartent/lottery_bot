@@ -1,13 +1,9 @@
-from sqlalchemy import create_engine, MetaData
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import create_engine, MetaData, Column, Integer, String
 from sqlalchemy.orm import sessionmaker
 from config import DB_URL
 from contextlib import contextmanager
 
 engine = create_engine(DB_URL)
-Base = declarative_base()
-metadata = MetaData()
-
 Session = sessionmaker(bind=engine)
 
 
@@ -22,3 +18,5 @@ def session_scope():
         raise
     finally:
         session.close()
+
+
