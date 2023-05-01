@@ -1,7 +1,6 @@
-import models
 from database import Session, session_scope
 from fastapi import Depends
-from models import User
+from tables import User
 
 
 class AuthService:
@@ -10,7 +9,7 @@ class AuthService:
     def add_user(self, user_id, user_name):
         with session_scope() as session:
             if not self.get_user(user_id):
-                user = models.User(id=user_id, user_name=user_name)
+                user = User(id=user_id, user_name=user_name)
                 session.add(user)
                 session.commit()
 
@@ -18,8 +17,8 @@ class AuthService:
         with session_scope() as session:
             user = (
                 session
-                .query(models.User)
-                .filter(models.User.id == user_id)
+                .query(User)
+                .filter(User.id == user_id)
                 .first()
             )
         return user

@@ -1,5 +1,5 @@
 from aiogram import Bot, Dispatcher
-from config import BOT_TOKEN, WEBHOOK_URL
+from config import BOT_TOKEN
 from aiogram.contrib.middlewares.logging import LoggingMiddleware
 
 
